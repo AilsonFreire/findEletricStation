@@ -9,8 +9,20 @@
     "test": "jest"
   },
   "dependencies": {
+    "eslint": "^6.7.2",
+    "prettier": "^1.19.1",
     "react": "16.9.0",
-    "react-native": "0.61.5"
+    "react-native": "0.61.5",
+    "react-native-gesture-handler": "^1.5.2",
+    "react-native-reanimated": "^1.4.0",
+    "react-native-screens": "^2.0.0-alpha.20",
+    "react-navigation": "^4.0.10",
+    "react-navigation-stack": "^1.10.3",
+    "reactotron-react-native": "^4.0.2",
+    "tslint": "^5.20.1",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-config-standard": "^9.0.0",
+    "tslint-react": "^4.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.6.2",
