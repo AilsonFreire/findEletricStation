@@ -16,7 +16,7 @@
       "@theme/*": ["theme/*"],
       "@components/*": ["components/*"],
       "@styles/*": ["styles/*"],
-      "@util/*": ["util/*"],
+      "@utils/*": ["utils/*"],
       "@services/*": ["services/*"]
     }
   },
