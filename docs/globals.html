@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Elestric Station</title>
+	<title>Eletric Stations</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="assets/css/main.css">
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="index.html" class="title">Elestric Station</a>
+					<a href="index.html" class="title">Eletric Stations</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -54,7 +54,7 @@
 					<a href="globals.html">Globals</a>
 				</li>
 			</ul>
-			<h1> Elestric Station</h1>
+			<h1> Eletric Stations</h1>
 		</div>
 	</div>
 </header>
@@ -66,17 +66,227 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
+							<h3>Type aliases</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-type-alias tsd-is-not-exported"><a href="globals.html#error" class="tsd-kind-icon">Error</a></li>
+								<li class="tsd-kind-type-alias tsd-is-not-exported"><a href="globals.html#options" class="tsd-kind-icon">Options</a></li>
+								<li class="tsd-kind-type-alias"><a href="globals.html#position" class="tsd-kind-icon">Position</a></li>
+								<li class="tsd-kind-type-alias"><a href="globals.html#region" class="tsd-kind-icon">Region</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Variables</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-variable"><a href="globals.html#container" class="tsd-kind-icon">Container</a></li>
+								<li class="tsd-kind-variable"><a href="globals.html#router" class="tsd-kind-icon">Router</a></li>
+								<li class="tsd-kind-variable"><a href="globals.html#api" class="tsd-kind-icon">api</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-function"><a href="globals.html#app" class="tsd-kind-icon">App</a></li>
+								<li class="tsd-kind-function"><a href="globals.html#home" class="tsd-kind-icon">Home</a></li>
+								<li class="tsd-kind-function"><a href="globals.html#stationinfo" class="tsd-kind-icon">Station<wbr>Info</a></li>
 								<li class="tsd-kind-function"><a href="globals.html#getstationbyid" class="tsd-kind-icon">get<wbr>Station<wbr>ById</a></li>
 								<li class="tsd-kind-function"><a href="globals.html#getstations" class="tsd-kind-icon">get<wbr>Stations</a></li>
+								<li class="tsd-kind-function"><a href="globals.html#getuserlocation" class="tsd-kind-icon">get<wbr>User<wbr>Location</a></li>
+								<li class="tsd-kind-function tsd-is-not-exported"><a href="globals.html#requestlocationpermission" class="tsd-kind-icon">request<wbr>Location<wbr>Permission</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Object literals</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-object-literal"><a href="globals.html#initial_region" class="tsd-kind-icon">INITIAL_<wbr>REGION</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Type aliases</h2>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-is-not-exported">
+					<a name="error" class="tsd-anchor"></a>
+					<h3>Error</h3>
+					<div class="tsd-signature tsd-kind-icon">Error<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/AilsonFreire/findEletricStation/blob/d02cf62/src/services/locationAPI/index.ts#L11">services/locationAPI/index.ts:11</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5>code<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-is-not-exported">
+					<a name="options" class="tsd-anchor"></a>
+					<h3>Options</h3>
+					<div class="tsd-signature tsd-kind-icon">Options<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/AilsonFreire/findEletricStation/blob/d02cf62/src/services/locationAPI/index.ts#L5">services/locationAPI/index.ts:5</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5>enable<wbr>High<wbr>Accuracy<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>maximum<wbr>Age<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>timeout<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias">
+					<a name="position" class="tsd-anchor"></a>
+					<h3>Position</h3>
+					<div class="tsd-signature tsd-kind-icon">Position<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in utils/types/postion.ts:1</li>
+						</ul>
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5>coords<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></h5>
+								<ul class="tsd-parameters">
+									<li class="tsd-parameter">
+										<h5>latitude<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+									</li>
+									<li class="tsd-parameter">
+										<h5>longitude<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias">
+					<a name="region" class="tsd-anchor"></a>
+					<h3>Region</h3>
+					<div class="tsd-signature tsd-kind-icon">Region<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/AilsonFreire/findEletricStation/blob/d02cf62/src/utils/types/region.ts#L1">utils/types/region.ts:1</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5>latitude<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>latitude<wbr>Delta<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>longitude<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>longitude<wbr>Delta<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+							</li>
+						</ul>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Variables</h2>
+				<section class="tsd-panel tsd-member tsd-kind-variable">
+					<a name="container" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> Container</h3>
+					<div class="tsd-signature tsd-kind-icon">Container<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-type">StyledComponentBase</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">View</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">__type</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">never</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol"> =&nbsp;styled(View)&#x60;flex: 1&#x60;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/AilsonFreire/findEletricStation/blob/d02cf62/src/views/home/style.tsx#L4">views/home/style.tsx:4</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable">
+					<a name="router" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> Router</h3>
+					<div class="tsd-signature tsd-kind-icon">Router<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">NavigationContainer</span><span class="tsd-signature-symbol"> =&nbsp;createAppContainer(createStackNavigator({Home,StationInfo}, {headerMode: &quot;none&quot;,initialRouteName: &quot;Home&quot;,}))</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/AilsonFreire/findEletricStation/blob/d02cf62/src/Router.ts#L8">Router.ts:8</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable">
+					<a name="api" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> api</h3>
+					<div class="tsd-signature tsd-kind-icon">api<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ApisauceInstance</span><span class="tsd-signature-symbol"> =&nbsp;create({baseURL: &quot;https://api.voltbras.com.br&quot;,})</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/AilsonFreire/findEletricStation/blob/d02cf62/src/services/baseURL.ts#L3">services/baseURL.ts:3</a></li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="app" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> App</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">App<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Element</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/AilsonFreire/findEletricStation/blob/d02cf62/src/App.tsx#L15">App.tsx:15</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Element</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="home" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> Home</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">Home<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Element</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/AilsonFreire/findEletricStation/blob/d02cf62/src/views/home/index.tsx#L11">views/home/index.tsx:11</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Element</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="stationinfo" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> Station<wbr>Info</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">Station<wbr>Info<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Element</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/AilsonFreire/findEletricStation/blob/d02cf62/src/views/stationInfo/index.tsx#L6">views/stationInfo/index.tsx:6</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Element</span></h4>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function">
 					<a name="getstationbyid" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> get<wbr>Station<wbr>ById</h3>
@@ -87,7 +297,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in index.ts:20</li>
+									<li>Defined in <a href="https://github.com/AilsonFreire/findEletricStation/blob/d02cf62/src/services/stationsAPI/index.ts#L20">services/stationsAPI/index.ts:20</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -125,7 +335,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in index.ts:7</li>
+									<li>Defined in <a href="https://github.com/AilsonFreire/findEletricStation/blob/d02cf62/src/services/stationsAPI/index.ts#L7">services/stationsAPI/index.ts:7</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -142,6 +352,113 @@
 						</li>
 					</ul>
 				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="getuserlocation" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> get<wbr>User<wbr>Location</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>User<wbr>Location<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"Error: Você precisa habilitar a localização do aplicativo."</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"Error: Você precisa atulizar sua versão do Google play service."</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"Error: Não possível acessar sua localização"</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/AilsonFreire/findEletricStation/blob/d02cf62/src/services/locationAPI/index.ts#L71">services/locationAPI/index.ts:71</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<ul>
+										<li>Funcition that checks if user has granted the permissions to get location and returns the current position</li>
+									</ul>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"Error: Você precisa habilitar a localização do aplicativo."</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"Error: Você precisa atulizar sua versão do Google play service."</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"Error: Não possível acessar sua localização"</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<ul>
+								<li>strig with error message or the object with user&#39;s location</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-is-not-exported">
+					<a name="requestlocationpermission" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> request<wbr>Location<wbr>Permission</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">request<wbr>Location<wbr>Permission<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/AilsonFreire/findEletricStation/blob/d02cf62/src/services/locationAPI/index.ts#L19">services/locationAPI/index.ts:19</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<ul>
+										<li>Function that checks the permissions from user to get his device location</li>
+									</ul>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<ul>
+								<li>true or false if permissions has granted</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Object literals</h2>
+				<section class="tsd-panel tsd-member tsd-kind-object-literal">
+					<a name="initial_region" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> INITIAL_<wbr>REGION</h3>
+					<div class="tsd-signature tsd-kind-icon">INITIAL_<wbr>REGION<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/AilsonFreire/findEletricStation/blob/d02cf62/src/utils/contants.ts#L1">utils/contants.ts:1</a></li>
+						</ul>
+					</aside>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="initial_region.latitude" class="tsd-anchor"></a>
+						<h3>latitude</h3>
+						<div class="tsd-signature tsd-kind-icon">latitude<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;37.78825</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/AilsonFreire/findEletricStation/blob/d02cf62/src/utils/contants.ts#L2">utils/contants.ts:2</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="initial_region.latitudedelta" class="tsd-anchor"></a>
+						<h3>latitude<wbr>Delta</h3>
+						<div class="tsd-signature tsd-kind-icon">latitude<wbr>Delta<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;0.015</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/AilsonFreire/findEletricStation/blob/d02cf62/src/utils/contants.ts#L3">utils/contants.ts:3</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="initial_region.longitude" class="tsd-anchor"></a>
+						<h3>longitude</h3>
+						<div class="tsd-signature tsd-kind-icon">longitude<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;-122.4324</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/AilsonFreire/findEletricStation/blob/d02cf62/src/utils/contants.ts#L4">utils/contants.ts:4</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="initial_region.longitudedelta" class="tsd-anchor"></a>
+						<h3>longitude<wbr>Delta</h3>
+						<div class="tsd-signature tsd-kind-icon">longitude<wbr>Delta<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;0.0121</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/AilsonFreire/findEletricStation/blob/d02cf62/src/utils/contants.ts#L5">utils/contants.ts:5</a></li>
+							</ul>
+						</aside>
+					</section>
+				</section>
 			</section>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
@@ -154,11 +471,50 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-type-alias tsd-is-not-exported">
+						<a href="globals.html#error" class="tsd-kind-icon">Error</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-not-exported">
+						<a href="globals.html#options" class="tsd-kind-icon">Options</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#position" class="tsd-kind-icon">Position</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#region" class="tsd-kind-icon">Region</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#container" class="tsd-kind-icon">Container</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#router" class="tsd-kind-icon">Router</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#api" class="tsd-kind-icon">api</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#app" class="tsd-kind-icon">App</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#home" class="tsd-kind-icon">Home</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#stationinfo" class="tsd-kind-icon">Station<wbr>Info</a>
+					</li>
 					<li class=" tsd-kind-function">
 						<a href="globals.html#getstationbyid" class="tsd-kind-icon">get<wbr>Station<wbr>ById</a>
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="globals.html#getstations" class="tsd-kind-icon">get<wbr>Stations</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#getuserlocation" class="tsd-kind-icon">get<wbr>User<wbr>Location</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-not-exported">
+						<a href="globals.html#requestlocationpermission" class="tsd-kind-icon">request<wbr>Location<wbr>Permission</a>
+					</li>
+					<li class=" tsd-kind-object-literal">
+						<a href="globals.html#initial_region" class="tsd-kind-icon">INITIAL_<wbr>REGION</a>
 					</li>
 				</ul>
 			</nav>

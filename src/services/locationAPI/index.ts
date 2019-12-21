@@ -1,12 +1,25 @@
+import { Position } from "@utils/types/postion";
 import { PermissionsAndroid, Platform } from "react-native";
-import Geolocation from "react-native-geolocation-service";
+import Geolocation, { GeoError } from "react-native-geolocation-service";
 
-const requestLocationPermission = async () => {
+type Options = {
+    enableHighAccuracy: boolean,
+    timeout: number,
+    maximumAge: number
+};
+
+type Error = {
+    code: number
+};
+
+/**
+ *  - Function that checks the permissions from user to get his device location
+ * @returns - true or false if permissions has granted
+ */
+const requestLocationPermission = async (): Promise<boolean> => {
 
     if (Platform.OS === "android") {
-        if (Platform.Version < 23) {
-            return true;
-        }
+        if (Platform.Version < 23) return true;
 
         const hasPermission = await PermissionsAndroid.check(
             PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION
@@ -29,7 +42,9 @@ const requestLocationPermission = async () => {
         return false;
 
     }
-    //ios only
+
+    return false;
+    // ios only
     // else {
     //     return Permissions.check("location", "whenInUse").then(async (response: string) => {
     //         if (response === "undetermined") {
@@ -49,19 +64,23 @@ const requestLocationPermission = async () => {
     // }
 };
 
+/**
+ * - Funcition that checks if user has granted the permissions to get location and returns the current position
+ * @returns - strig with error message or the object with user's location
+ */
 export const getUserLocation = async () => {
     const hasLocationPermission = await requestLocationPermission();
 
     if (!hasLocationPermission) return "Error: Você precisa habilitar a localização do aplicativo.";
 
-    const options = { enableHighAccuracy: true, timeout: 15000, maximumAge: 10000 }
+    const options: Options = { enableHighAccuracy: true, timeout: 15000, maximumAge: 10000 };
 
-    const getPosition = (value: object) => {
-        return new Promise((res, rej) => Geolocation.getCurrentPosition(res, rej, value));
+    const getPosition = (param: Options): Promise<Position> => {
+        return new Promise<Position>((res, rej) => Geolocation.getCurrentPosition(res, rej, param));
     };
 
-    return getPosition(options).then((position => position))
-        .catch((error) => {
+    return getPosition(options).then((position: Position) => position)
+        .catch((error: GeoError) => {
             if (error.code === 4) return "Error: Você precisa atulizar sua versão do Google play service.";
             else return "Error: Não possível acessar sua localização";
         });
