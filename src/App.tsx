@@ -7,13 +7,16 @@
  *
  * @format
  */
-
+import theme from "@theme/theme";
 import React from "react";
+import { ThemeProvider } from "styled-components";
 import Router from "./Router";
 
 const App = () => {
   return (
-    <Router />
+    <ThemeProvider theme={theme}>
+      <Router />
+    </ThemeProvider>
   );
 };
 

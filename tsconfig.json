@@ -13,11 +13,11 @@
     "baseUrl": "src",
     "paths": {
       "@views/*": ["views/*"],
+      "@theme/*": ["theme/*"],
       "@components/*": ["components/*"],
       "@styles/*": ["styles/*"],
       "@util/*": ["util/*"],
-      "@services/*": ["services/*"],
-      "@navigators/*": ["navigators/*"]
+      "@services/*": ["services/*"]
     }
   },
   "exclude": [

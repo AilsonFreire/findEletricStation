@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* findEletroStationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* findEletroStationTests.m */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
@@ -20,6 +19,9 @@
 		7FFE30897A13434AB896D132 /* libPods-findEletroStation-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF7C5044D33F95D89FE51122 /* libPods-findEletroStation-tvOS.a */; };
 		E9984264D0496224E983360C /* libPods-findEletroStationTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EF55D94830B83B94293F5AB /* libPods-findEletroStationTests.a */; };
 		EEFF5CF492C8350ADA6428AE /* libPods-findEletroStation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1301A80899EA013715F81A54 /* libPods-findEletroStation.a */; };
+		182B352A838E463895C47538 /* CircularStd-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 40C7FC068BC3404E99C5B6C4 /* CircularStd-Bold.otf */; };
+		6C25539D076E49C59A06E5AC /* CircularStd-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = E3F4192A8623423DB48C56F8 /* CircularStd-Book.otf */; };
+		351D403FB7384F55939ABBCE /* CircularStd-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CC21CB285EF04F2D9761602E /* CircularStd-Medium.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,9 @@
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 		F4AC933996FF196CCC9138DD /* libPods-findEletroStation-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-findEletroStation-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		40C7FC068BC3404E99C5B6C4 /* CircularStd-Bold.otf */ = {isa = PBXFileReference; name = "CircularStd-Bold.otf"; path = "../assets/fonts/CircularStd-Bold.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		E3F4192A8623423DB48C56F8 /* CircularStd-Book.otf */ = {isa = PBXFileReference; name = "CircularStd-Book.otf"; path = "../assets/fonts/CircularStd-Book.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		CC21CB285EF04F2D9761602E /* CircularStd-Medium.ttf */ = {isa = PBXFileReference; name = "CircularStd-Medium.ttf"; path = "../assets/fonts/CircularStd-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +186,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				416676FB0BAF713081592A85 /* Pods */,
+				90978A4BEC3D401DB4890C42 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -197,6 +203,17 @@
 			);
 			name = Products;
 			sourceTree = "<group>";
+		};
+		90978A4BEC3D401DB4890C42 /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				40C7FC068BC3404E99C5B6C4 /* CircularStd-Bold.otf */,
+				E3F4192A8623423DB48C56F8 /* CircularStd-Book.otf */,
+				CC21CB285EF04F2D9761602E /* CircularStd-Medium.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -285,7 +302,7 @@
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0940;
+				LastUpgradeCheck = 940;
 				ORGANIZATIONNAME = Facebook;
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
@@ -338,6 +355,9 @@
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+				182B352A838E463895C47538 /* CircularStd-Bold.otf in Resources */,
+				6C25539D076E49C59A06E5AC /* CircularStd-Book.otf in Resources */,
+				351D403FB7384F55939ABBCE /* CircularStd-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
