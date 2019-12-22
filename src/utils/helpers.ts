@@ -3,23 +3,27 @@ import { Station } from "./types/station";
 
 export const mapObjectToArray = <T>(param: T): T[] => Object.keys(param).map(key => param[key]);
 
-const calculateckDistance = (originLat: number, targetLat: number, radTheta: number): number => (
+const calculateSinCos = (originLat: number, targetLat: number, radTheta: number): number => (
     Math.sin(originLat) * Math.sin(targetLat) + Math.cos(originLat) * Math.cos(targetLat) * Math.cos(radTheta)
 );
 
 const coordinateToRad = (coordinate: number): number => ((Math.PI * coordinate) / 180);
 
-export const filterStationsNearbyByDistance = (region: Region, stations: Station[], distance: number): Station[] => stations.filter((station: Station) => {
-    const originLat = coordinateToRad(region.latitude);
-    const originLong = coordinateToRad(region.longitude);
-    const targetLat = coordinateToRad(station.geo.lat);
-    const targetLong = coordinateToRad(station.geo.long);
-    const theta = region.longitude - station.geo.long;
+const calculateDistance = (originLat: number, originLong: number, targetLat: number, targetLong: number): number => {
+    const originLatRad = coordinateToRad(originLat);
+    const targetLatRad = coordinateToRad(targetLat);
+    const theta = originLong - targetLong;
     const radTheta = coordinateToRad(theta);
-    const distanceOriginTarget = calculateckDistance(originLat, targetLat, radTheta);
+    let distanceOriginTarget = calculateSinCos(originLatRad, targetLatRad, radTheta);
+    distanceOriginTarget = Math.acos(distanceOriginTarget);
+    distanceOriginTarget = distanceOriginTarget * 180 / Math.PI;
+    distanceOriginTarget = distanceOriginTarget * 60 * 1.1515;
+    distanceOriginTarget = distanceOriginTarget * 1.609344;
+    return Number(distanceOriginTarget.toFixed(2));
+};
 
-    console.log(distanceOriginTarget)
-});
+
+export const filterStationsNearbyByDistance = (region: Region, stations: Station[], distance: number): Station[] => stations.filter((station: Station) => calculateDistance(region.latitude, region.longitude, station.geo.lat, station.geo.long) <= distance);
 
 export const markerColor = (status: string, canControl: boolean): string => {
     if (status === "AVAILABLE") return "green";

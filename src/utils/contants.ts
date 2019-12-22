@@ -5,4 +5,4 @@ export const INITIAL_REGION = {
     longitudeDelta: 0.0121,
 };
 
-export const DISTANCE = 0.100;
+export const DISTANCE = 100.00;
