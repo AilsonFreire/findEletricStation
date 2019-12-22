@@ -1,6 +1,6 @@
 export default {
     colors: {
-        grayColor: "F2F2E6",
+        grayColor: "#F2F2E6",
         lightColor: "#FFFF",
         primaryColor: "#3486EA",
         secondaryColor: "#32CC56",
