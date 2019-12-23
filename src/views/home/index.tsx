@@ -15,12 +15,14 @@ import { useAsyncEffect } from "use-async-effect";
 import { AlignHeaderButtons, Container, Content, HeaderButtons, IconButton } from "./style";
 
 const Home = () => {
-  const { colors: { lightColor, primaryColor } } = useContext<Theme>(ThemeContext);
+  const { colors: { primaryColor } } = useContext<Theme>(ThemeContext);
 
   const [region, setRegion] = useState<Region>(INITIAL_REGION);
   const [stations, setStations] = useState<Station[]>([]);
   const [contentControl, setContentControl] = useState<string>("");
   const [showCard, setCard] = useState(false);
+
+  const cardHeight = new Animated.Value(Dimensions.get("window").height * 0.7);
 
   useAsyncEffect(async () => {
     await requestStations();
@@ -71,7 +73,10 @@ const Home = () => {
               ))
             }
           </MapView>
-          {showCard && <Animated.View style={{ height: Dimensions.get("window").height * 0.3 }} >
+          {showCard && <Animated.View
+
+            style={{ top: cardHeight, position: "absolute", left: 0, right: 0, bottom: 0 }}
+          >
             <Content>
               <AlignHeaderButtons>
                 <HeaderButtons>
