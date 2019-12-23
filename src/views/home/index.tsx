@@ -12,7 +12,7 @@ import MapView, { Marker, PROVIDER_GOOGLE } from "react-native-maps";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import { ThemeContext } from "styled-components";
 import { useAsyncEffect } from "use-async-effect";
-import { Container, Content } from "./style";
+import { AlignHeaderButtons, Container, Content, HeaderButtons, IconButton } from "./style";
 
 const Home = () => {
   const { colors: { lightColor, primaryColor } } = useContext<Theme>(ThemeContext);
@@ -20,6 +20,7 @@ const Home = () => {
   const [region, setRegion] = useState<Region>(INITIAL_REGION);
   const [stations, setStations] = useState<Station[]>([]);
   const [contentControl, setContentControl] = useState<string>("");
+  const [showCard, setCard] = useState(false);
 
   useAsyncEffect(async () => {
     await requestStations();
@@ -65,16 +66,25 @@ const Home = () => {
                   key={station.id}
                   coordinate={{ latitude: station.geo.lat, longitude: station.geo.long }}
                   pinColor={markerColor(station.status, station.canControl)}
-                  onPress={() => console.log("clickou", station)}
+                  onPress={() => setCard(true)}
                 />
               ))
             }
           </MapView>
-          <Animated.View style={{ height: Dimensions.get("window").height * 0.3 }} >
+          {showCard && <Animated.View style={{ height: Dimensions.get("window").height * 0.3 }} >
             <Content>
-              <Icon name="close" color={primaryColor} size={25} />
+              <AlignHeaderButtons>
+                <HeaderButtons>
+                  <IconButton>
+                    <Icon name="chevron-down" color={primaryColor} size={25} />
+                  </IconButton>
+                  <IconButton onPress={() => setCard(false)}>
+                    <Icon name="close" color={primaryColor} size={25} />
+                  </IconButton>
+                </HeaderButtons>
+              </AlignHeaderButtons>
             </Content>
-          </Animated.View>
+          </Animated.View>}
         </Container >
       );
   }
