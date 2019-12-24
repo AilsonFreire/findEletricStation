@@ -7,28 +7,30 @@ import { Region } from "@utils/types/region";
 import { Station } from "@utils/types/station";
 import { Theme } from "@utils/types/theme";
 import React, { useContext, useState } from "react";
-import { Alert, Animated, Dimensions, StatusBar } from "react-native";
-import MapView, { Marker, PROVIDER_GOOGLE } from "react-native-maps";
+import { Alert, StatusBar } from "react-native";
+import MapView, { MapEvent, Marker, PROVIDER_GOOGLE } from "react-native-maps";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
+import { NavigationRoute } from "react-navigation";
+import { NavigationStackProp } from "react-navigation-stack";
 import { ThemeContext } from "styled-components";
 import { useAsyncEffect } from "use-async-effect";
-import { AlignHeaderButtons, Container, Content, HeaderButtons, IconButton } from "./style";
+import { AlignHeaderButtons, AlignIconAndStationInfo, Card, Container, Content, HeaderButtons, IconButton, StationInfos, StationName, TextButton } from "./style";
 
-const Home = () => {
-  const { colors: { primaryColor } } = useContext<Theme>(ThemeContext);
+const Home = ({ navigation }: { navigation: NavigationStackProp<NavigationRoute> }) => {
+  const { colors: { primaryColor, grayColor } } = useContext<Theme>(ThemeContext);
 
   const [region, setRegion] = useState<Region>(INITIAL_REGION);
   const [stations, setStations] = useState<Station[]>([]);
+  const [oneStation, setSation] = useState<Station>();
   const [contentControl, setContentControl] = useState<string>("");
   const [showCard, setCard] = useState(false);
-
-  const cardHeight = new Animated.Value(Dimensions.get("window").height * 0.7);
 
   useAsyncEffect(async () => {
     await requestStations();
   }, [region]);
 
   const requestLocation = async () => {
+    setContentControl("");
     const location = await getUserLocation();
     typeof location === "string" ? Alert.alert(location) : setRegion({
       latitude: location.coords.latitude,
@@ -48,6 +50,24 @@ const Home = () => {
     }
   };
 
+  const openCard = (e: MapEvent, mapStation: Station) => {
+    const { nativeEvent: { coordinate: { latitude, longitude } }
+    } = e;
+    setRegion({
+      latitude,
+      latitudeDelta: 0.035,
+      longitude,
+      longitudeDelta: 0.0321,
+    });
+    setCard(true);
+    setSation(mapStation);
+  };
+
+  const closeCard = async () => {
+    await requestLocation();
+    setCard(false);
+  };
+
   switch (contentControl) {
     case "error":
       return <Error onRerty={() => requestLocation()} />;
@@ -56,7 +76,7 @@ const Home = () => {
         <Container>
           <StatusBar backgroundColor="rgba(255, 255, 255, 0.1)" barStyle="dark-content" translucent={true} />
           <MapView
-            onMapReady={() => requestLocation()}
+            onMapReady={requestLocation}
             provider={PROVIDER_GOOGLE}
             region={region}
             showsUserLocation={true}
@@ -68,28 +88,41 @@ const Home = () => {
                   key={station.id}
                   coordinate={{ latitude: station.geo.lat, longitude: station.geo.long }}
                   pinColor={markerColor(station.status, station.canControl)}
-                  onPress={() => setCard(true)}
+                  onPress={(e) => openCard(e, station)}
                 />
               ))
             }
           </MapView>
-          {showCard && <Animated.View
-
-            style={{ top: cardHeight, position: "absolute", left: 0, right: 0, bottom: 0 }}
-          >
+          {showCard && <Card>
             <Content>
               <AlignHeaderButtons>
                 <HeaderButtons>
-                  <IconButton>
-                    <Icon name="chevron-down" color={primaryColor} size={25} />
+                  <IconButton onPress={() => navigation.navigate("StationInfo", { station: oneStation })}>
+                    <Icon name="chevron-up" color={primaryColor} size={25} />
                   </IconButton>
-                  <IconButton onPress={() => setCard(false)}>
+                  <IconButton onPress={closeCard}>
                     <Icon name="close" color={primaryColor} size={25} />
                   </IconButton>
                 </HeaderButtons>
               </AlignHeaderButtons>
+              <TextButton>Mais informações</TextButton>
+              <StationName numberOfLines={2} ellipsizeMode="tail">
+                {oneStation?.name}
+              </StationName>
+              <StationInfos>
+                {`${oneStation?.location?.address?.street}, ${oneStation?.location?.address?.streetNumber}`}
+              </StationInfos>
+              <StationInfos>
+                {oneStation?.location?.address?.city}
+              </StationInfos>
+              <AlignIconAndStationInfo>
+                <Icon name="cash" color={grayColor} size={25} />
+                <StationInfos>
+                  {` R$${oneStation?.energyPrice}/kWh`}
+                </StationInfos>
+              </AlignIconAndStationInfo>
             </Content>
-          </Animated.View>}
+          </Card>}
         </Container >
       );
   }

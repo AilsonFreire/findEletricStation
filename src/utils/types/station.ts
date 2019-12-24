@@ -7,13 +7,15 @@ export type Station = {
     },
     energyPrice: number,
     name: string,
-    description: string,
-    openHours: string,
-    address: {
-        street: string,
-        streetNumber: number,
-        city: string,
-        state: string,
-    },
+    location: {
+        description: string,
+        openHours: string,
+        address: {
+            street: string,
+            streetNumber: number,
+            city: string,
+            state: string,
+        },
+    }
     canControl: boolean
 };
